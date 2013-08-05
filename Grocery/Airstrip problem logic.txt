@@ -1,0 +1,50 @@
+The name of the input file is entered by the user.
+Assuming the file is in the same folder as the executable file.
+Or the user will have to type the file path including the file name
+
+
+
+File format:
+First line is number of registers
+Last register is trainee, which is 2 minutes per item
+
+Customer type
+Customer arrives
+number of items customer has
+
+
+Approach:
+Process file contents
+Create DataTable for customers
+Add customers from file
+Sort customers by StartTime, ItemCount, CustomerType
+Create DataTable for registers
+Insert values for total number of registers (RowCount = RegisterCount)
+Iterate through customers and begin with StartTime 
+process customers and assign to register
+Determine time of arrival and completion and item count by minutes for each register and customers compared to current time
+Remove customers from customers once process time has passed and update registers table values
+End when all customers have been processed and removed
+Calculate total completion time in register table and capture greatest value
+display output
+
+DataTables:
+
+* Although using DataTables requires more overhead, using jagged arrays seem a bit more difficult to navigate
+
+Customers:
+CustomerType
+StartTime
+ItemCount
+AssignedRegister
+TimeMultiplier
+TimeCompleted
+
+Registers:
+RegisterNumber
+TimeMultiplier
+TotalCustomers
+TotalItemCount
+LastCustomerItemCount
+CurrentTime
+CompletionTime
